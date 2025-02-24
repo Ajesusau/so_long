@@ -6,7 +6,7 @@
 #    By: anareval <anareval@student.42malaga.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/12/12 13:32:02 by anareval          #+#    #+#              #
-#    Updated: 2025/02/24 23:09:05 by anareval         ###   ########.fr        #
+#    Updated: 2025/02/24 23:21:09 by anareval         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,7 +18,7 @@ RM = rm -f
 
 LIBMLX = 	./lib/MLX42
 LIBFT =		./lib/Libft
-HEADERS = 	-I ./include -I $(LIBMLX)/include -I $(LIBFT)/ft_printf
+HEADERS = 	-I ./include -I $(LIBMLX)/include -I $(LIBFT)/include
 LIBS = 		$(LIBMLX)/build/libmlx42.a -ldl -lglfw -pthread -lm \
 		$(LIBFT)/libft.a
 
