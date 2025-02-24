@@ -16,8 +16,8 @@ CC = cc
 CFLAGS = -Wall -Werror -Wextra -Wunreachable-code -Ofast
 RM = rm -f
 
-LIBMLX = 	./lib/MLX42
-LIBFT =		./lib/Libft
+LIBMLX = 	./libs/MLX42
+LIBFT =		./libs/Libft
 HEADERS = 	-I ./include -I $(LIBMLX)/include -I $(LIBFT)/include
 LIBS = 		$(LIBMLX)/build/libmlx42.a -ldl -lglfw -pthread -lm \
 		$(LIBFT)/libft.a
