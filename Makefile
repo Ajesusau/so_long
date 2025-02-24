@@ -6,7 +6,7 @@
 #    By: anareval <anareval@student.42malaga.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/12/12 13:32:02 by anareval          #+#    #+#              #
-#    Updated: 2025/02/24 18:12:46 by anareval         ###   ########.fr        #
+#    Updated: 2025/02/24 23:09:05 by anareval         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,11 +18,11 @@ RM = rm -f
 
 LIBMLX = 	./lib/MLX42
 LIBFT =		./lib/Libft
-HEADERS = 	-I ./include -I $(LIBMLX)/include -I $(LIBFT)
+HEADERS = 	-I ./include -I $(LIBMLX)/include -I $(LIBFT)/ft_printf
 LIBS = 		$(LIBMLX)/build/libmlx42.a -ldl -lglfw -pthread -lm \
 		$(LIBFT)/libft.a
 
-SRCS =		so_long.c
+SRCS =		./sources/so_long.c
 
 OBJS = $(SRCS:.c=.o)
 
@@ -35,7 +35,7 @@ libmlx:
 	fi
 
 libft:
-	@if [ ! -f "$(LIBTF)/libft.a" ]; then \
+	@if [ ! -f "$(LIBFT)/libft.a" ]; then \
 		make -C $(LIBFT); \
 		echo "Make LIBFT"; \
 		make clean -C $(LIBFT); \
