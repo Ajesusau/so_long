@@ -6,7 +6,7 @@
 #    By: anareval <anareval@student.42malaga.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/12/12 13:32:02 by anareval          #+#    #+#              #
-#    Updated: 2025/02/24 23:30:25 by anareval         ###   ########.fr        #
+#    Updated: 2025/02/25 19:32:54 by anareval         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -66,8 +66,7 @@ FTPRINTF_SRCS =		./ft_printf/ft_printf.c \
 					./ft_printf/ft_putnbr_utils.c \
 					./ft_printf/ft_put_utils.c
 
-GETNEXTLINE_SRCS =	./get_next_line/get_next_line.c \
-					./get_next_line/get_next_line_utils.c
+GETNEXTLINE_SRCS =	./get_next_line/get_next_line.c
 
 SRCS = $(LIBFT_SRCS) $(FTPRINTF_SRCS) $(GETNEXTLINE_SRCS)
 

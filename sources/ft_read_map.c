@@ -1,33 +1,42 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   so_long.c                                          :+:      :+:    :+:   */
+/*   ft_read_map.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: anareval <anareval@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/02/24 12:22:19 by anareval          #+#    #+#             */
-/*   Updated: 2025/02/25 19:25:21 by anareval         ###   ########.fr       */
+/*   Created: 2025/02/25 18:34:43 by anareval          #+#    #+#             */
+/*   Updated: 2025/02/25 19:27:21 by anareval         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
 
-int	main(int argc, char *argv[])
+void	ft_read_map(t_dat_map *map, char *file)
 {
-	t_dat_map	map;
-	mlx_t		*mlx;
+	int		fd;
+	char	*line;
 
-	if (argc == 2)
+	fd = open(file, O_RDONLY);
+	if (fd == -1)
 	{
-		ft_read_map(&map, argv[1]);
-		mlx = mlx_init(WIDTH, HEIGHT, "Anareval42Game", true);
-		if (!mlx)
-			exit(EXIT_FAILURE);
-		ft_printf("Game started...");
-		mlx_loop(mlx);
-		mlx_terminate(mlx);
-		return (EXIT_SUCCESS);
+		perror("Unable to open the file");
+		exit (EXIT_FAILURE);
 	}
-	else
-		ft_printf("Invalid number of arguments.");
+	line = get_next_line(fd);
+	map->width = ft_strlen(line) - 1;
+	map->height = 0;
+	while (line)
+	{
+		if ((int)ft_strlen(line) - 1 != map->width)
+		{
+			ft_printf("Error: not valid map");
+			exit(EXIT_FAILURE);
+		}
+		map->height++;
+		free(line);
+		line = get_next_line(fd);
+	}
+	line = NULL;
+	close(fd);
 }

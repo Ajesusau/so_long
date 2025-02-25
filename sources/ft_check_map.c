@@ -1,33 +1,13 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   so_long.c                                          :+:      :+:    :+:   */
+/*   ft_check_map.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: anareval <anareval@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/02/24 12:22:19 by anareval          #+#    #+#             */
-/*   Updated: 2025/02/25 19:25:21 by anareval         ###   ########.fr       */
+/*   Created: 2025/02/25 16:55:41 by anareval          #+#    #+#             */
+/*   Updated: 2025/02/25 16:56:12 by anareval         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
-
-int	main(int argc, char *argv[])
-{
-	t_dat_map	map;
-	mlx_t		*mlx;
-
-	if (argc == 2)
-	{
-		ft_read_map(&map, argv[1]);
-		mlx = mlx_init(WIDTH, HEIGHT, "Anareval42Game", true);
-		if (!mlx)
-			exit(EXIT_FAILURE);
-		ft_printf("Game started...");
-		mlx_loop(mlx);
-		mlx_terminate(mlx);
-		return (EXIT_SUCCESS);
-	}
-	else
-		ft_printf("Invalid number of arguments.");
-}
