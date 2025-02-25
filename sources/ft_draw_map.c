@@ -1,38 +1,42 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   so_long.c                                          :+:      :+:    :+:   */
+/*   ft_draw_map.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: anareval <anareval@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/02/24 12:22:19 by anareval          #+#    #+#             */
-/*   Updated: 2025/02/25 20:45:38 by anareval         ###   ########.fr       */
+/*   Created: 2025/02/25 20:30:53 by anareval          #+#    #+#             */
+/*   Updated: 2025/02/25 20:57:57 by anareval         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
 
-int	main(int argc, char *argv[])
+void	ft_draw_map(t_map *map)
 {
-	t_map	map;
-	mlx_t	*mlx;
+	int	i;
+	int	j;
 
-	if (argc == 2)
+	i = 0;
+	j = 0;
+	while (i < map->height)
 	{
-		ft_read_map(&map, argv[1]);
-		ft_save_map(&map, argv[1]);
-		ft_draw_map(&map);
-		mlx = mlx_init(WIDTH, HEIGHT, "Anareval42Game", true);
-		if (!mlx)
-			exit(EXIT_FAILURE);
-		ft_printf("Game started...");
-		mlx_loop(mlx);
-		mlx_terminate(mlx);
-		return (EXIT_SUCCESS);
-	}
-	else
-	{
-		ft_printf("Invalid number of arguments.");
-		return (EXIT_FAILURE);
+		j = 0;
+		while (j < map->width)
+		{
+			if (map->map[i][j] == '0')
+				ft_printf("0");
+			if (map->map[i][j] == '1')
+				ft_printf("1");
+			if (map->map[i][j] == 'P')
+				ft_printf("P");
+			if (map->map[i][j] == 'C')
+				ft_printf("c");
+			if (map->map[i][j] == 'E')
+				ft_printf("E");
+			j++;
+		}
+		ft_printf("\n");
+		i++;
 	}
 }
