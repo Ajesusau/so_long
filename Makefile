@@ -26,7 +26,11 @@ SRCS =		./sources/so_long.c
 
 OBJS = $(SRCS:.c=.o)
 
-all: libmlx libft $(NAME)
+all: st_msg libmlx libft $(NAME)
+	@echo "✅ Build completed successfully!"
+
+st_msg:
+	@echo "📦 Creating the library: $(NAME)"
 
 libmlx:
 	@if [ ! -f "$(LIBMLX)/build/libmlx42.a" ]; then \
@@ -37,25 +41,31 @@ libmlx:
 libft:
 	@if [ ! -f "$(LIBFT)/libft.a" ]; then \
 		make -C $(LIBFT); \
-		echo "Make LIBFT"; \
 		make clean -C $(LIBFT); \
 	fi
 
 
 %.o: %.c	
-		@$(CC) $(CFLAGS) $(HEADERS) -o $@ -c $<  && printf "Compiling: $(notdir $<)\n"
+	@$(CC) $(CFLAGS) $(HEADERS) -o $@ -c $<
 
 $(NAME): $(OBJS)
-		@$(CC) $(OBJS) $(LIBS) -o $(NAME)
+	@$(CC) $(OBJS) $(LIBS) -o $(NAME)
 
 clean:
-		@$(RM) $(OBJS)
-		@$(RM) -rf $(LIBMLX)/build
-		@make fclean -C $(LIBFT)
+	@echo "🗑️  Deleting .o files..."
+	@$(RM) $(OBJS)
+	@$(RM) -rf $(LIBMLX)/build
+	@echo "✅ Done!"
+	@make fclean -C $(LIBFT)
 
 fclean: clean
-		@$(RM) $(NAME)
+	@echo "🚮 Deleting $(NAME)..."
+	@$(RM) $(NAME)
+	@echo "✅ Done!"
 
-re: fclean all
+re: re_msg fclean all
+
+re_msg:
+	@echo "🔄 Recreating the library..."
 
 .PHONY: all clean fclean re libmlx libft
