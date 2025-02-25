@@ -30,9 +30,9 @@ char	*ft_strdup(const char *str)
 	return (str2);
 }
 
-int	ft_strlen(const char *str)
+size_t	ft_strlen(const char *str)
 {
-	int	length;
+	size_t	length;
 
 	length = 0;
 	while (*str)
@@ -76,9 +76,9 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	i = 0;
 	if (!s)
 		return (NULL);
-	if ((unsigned)ft_strlen(s) <= start)
+	if ((unsigned int)ft_strlen(s) <= start)
 		len = 0;
-	else if ((unsigned)ft_strlen(s) < (start + len))
+	else if ((unsigned int)ft_strlen(s) < (start + len))
 		len = ft_strlen(s) - start;
 	s2 = malloc(len + 1);
 	if (!s2)

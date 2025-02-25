@@ -22,7 +22,7 @@
 
 char	*get_next_line(int fd);
 char	*ft_strdup(const char *str);
-int		ft_strlen(const char *str);
+size_t	ft_strlen(const char *str);
 char	*ft_strchr(const char *str, int c);
 char	*ft_substr(char const *s, unsigned int start, size_t len);
 char	*ft_strjoin(const char *s1, const char *s2);
