@@ -6,7 +6,7 @@
 /*   By: anareval <anareval@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/25 18:34:43 by anareval          #+#    #+#             */
-/*   Updated: 2025/02/26 18:10:13 by anareval         ###   ########.fr       */
+/*   Updated: 2025/02/26 22:19:46 by anareval         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ void	ft_read_map(t_map *map, char *file)
 	close(fd);
 }
 
-static void	ft_fmalloc(void)
+void	ft_fmalloc(void)
 {
 	ft_printf("Error: Could not create the map.");
 	exit(EXIT_FAILURE);

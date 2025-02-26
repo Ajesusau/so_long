@@ -6,7 +6,7 @@
 #    By: anareval <anareval@student.42malaga.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/12/12 13:32:02 by anareval          #+#    #+#              #
-#    Updated: 2025/02/25 20:36:43 by anareval         ###   ########.fr        #
+#    Updated: 2025/02/26 22:25:50 by anareval         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -25,7 +25,9 @@ LIBS = 		$(LIBMLX)/build/libmlx42.a -ldl -lglfw -pthread -lm \
 SRCS =		./sources/so_long.c \
 			./sources/ft_read_map.c \
 			./sources/ft_check_map.c \
-			./sources/ft_draw_map.c
+			./sources/ft_draw_map.c \
+			./sources/ft_load_img.c \
+			./sources/ft_free.c
 
 OBJS = $(SRCS:.c=.o)
 

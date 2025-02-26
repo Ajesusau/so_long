@@ -6,7 +6,7 @@
 /*   By: anareval <anareval@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/24 18:31:21 by anareval          #+#    #+#             */
-/*   Updated: 2025/02/26 21:03:41 by anareval         ###   ########.fr       */
+/*   Updated: 2025/02/26 22:25:32 by anareval         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,26 +28,30 @@
 # define WALL		"./img/wall.xpm42"
 # define WIN		"./img/win.xpm42"
 
+typedef struct s_img
+{
+	mlx_image_t	*collect;
+	mlx_image_t	*empty;
+	mlx_image_t	*exit;
+	mlx_image_t	*player;
+	mlx_image_t	*wall;
+	mlx_image_t	*win;
+}	t_img;
+
 typedef struct s_map
 {
 	int		height;
 	int		width;
 	char	**map;
 	void	*wind;
+	t_img	*img;
 }	t_map;
-
-typedef struct s_images
-{
-	void	*collect;
-	void	*empty;
-	void	*exit;
-	void	*player;
-	void	*wall;
-	void	*win;
-}	t_images;
 
 void	ft_read_map(t_map *map, char *file);
 void	ft_save_map(t_map *map, char *file);
 void	ft_draw_map(t_map *map);
+void	ft_load_img(t_map *map);
+void	ft_fmalloc(void);
+void	ft_free(t_map *map);
 
 #endif
