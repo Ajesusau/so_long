@@ -6,7 +6,7 @@
 /*   By: anareval <anareval@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/24 18:31:21 by anareval          #+#    #+#             */
-/*   Updated: 2025/02/25 20:37:04 by anareval         ###   ########.fr       */
+/*   Updated: 2025/02/26 20:38:04 by anareval         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,14 +21,12 @@
 # include "libft.h"
 # include "get_next_line.h"
 
-# define WIDTH 2560
-# define HEIGHT 1560
-
 typedef struct s_map
 {
 	int		height;
 	int		width;
 	char	**map;
+	void	*wind;
 }	t_map;
 
 typedef struct s_images
@@ -38,7 +36,6 @@ typedef struct s_images
 	void	*exit;
 	void	*player;
 	void	*wall;
-	void	*winner;
 }	t_images;
 
 void	ft_read_map(t_map *map, char *file);

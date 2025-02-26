@@ -6,7 +6,7 @@
 /*   By: anareval <anareval@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/24 12:22:19 by anareval          #+#    #+#             */
-/*   Updated: 2025/02/25 20:45:38 by anareval         ###   ########.fr       */
+/*   Updated: 2025/02/26 19:19:55 by anareval         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,19 +15,16 @@
 int	main(int argc, char *argv[])
 {
 	t_map	map;
-	mlx_t	*mlx;
 
 	if (argc == 2)
 	{
 		ft_read_map(&map, argv[1]);
 		ft_save_map(&map, argv[1]);
 		ft_draw_map(&map);
-		mlx = mlx_init(WIDTH, HEIGHT, "Anareval42Game", true);
-		if (!mlx)
-			exit(EXIT_FAILURE);
+		map.wind = mlx_init(map.width * 40, map.height * 40, "42so_long", true);
 		ft_printf("Game started...");
-		mlx_loop(mlx);
-		mlx_terminate(mlx);
+		mlx_loop(map.wind);
+		mlx_terminate(map.wind);
 		return (EXIT_SUCCESS);
 	}
 	else
