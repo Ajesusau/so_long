@@ -6,7 +6,7 @@
 /*   By: anareval <anareval@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/25 18:34:43 by anareval          #+#    #+#             */
-/*   Updated: 2025/02/26 22:19:46 by anareval         ###   ########.fr       */
+/*   Updated: 2025/02/27 11:58:48 by anareval         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,10 +64,10 @@ void	ft_save_map(t_map *map, char *file)
 		if (!line)
 			ft_fmalloc();
 		map->map[i] = ft_strdup(line);
+		free(line);
 		if (!map->map[i])
 			ft_fmalloc();
 		i++;
-		free(line);
 	}
 	line = NULL;
 	close(fd);
