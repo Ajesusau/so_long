@@ -6,13 +6,13 @@
 /*   By: anareval <anareval@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/26 22:16:33 by anareval          #+#    #+#             */
-/*   Updated: 2025/02/27 18:48:46 by anareval         ###   ########.fr       */
+/*   Updated: 2025/02/28 09:37:02 by anareval         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
 
-/*static void	ft_free_img(t_map *map)
+static void	ft_free_img(t_map *map)
 {
 	mlx_delete_image(map->wind, map->img->collect);
 	mlx_delete_image(map->wind, map->img->empty);
@@ -20,15 +20,13 @@
 	mlx_delete_image(map->wind, map->img->player);
 	mlx_delete_image(map->wind, map->img->wall);
 	mlx_delete_image(map->wind, map->img->win);
-}*/
+}
 
-static void ft_free_map(t_map *map)
+static void	ft_free_map(t_map *map)
 {
 	int	i;
-	int	j;
 
 	i = 0;
-	j = 0;
 	while (i < map->height)
 	{
 		free(map->map[i]);
@@ -39,5 +37,5 @@ static void ft_free_map(t_map *map)
 void	ft_free(t_map *map)
 {
 	ft_free_map(map);
-	//ft_free_img(map);
+	ft_free_img(map);
 }
