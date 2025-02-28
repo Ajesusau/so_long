@@ -6,7 +6,7 @@
 /*   By: anareval <anareval@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/24 12:22:19 by anareval          #+#    #+#             */
-/*   Updated: 2025/02/28 09:38:13 by anareval         ###   ########.fr       */
+/*   Updated: 2025/02/28 10:06:15 by anareval         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,10 +20,10 @@ int	main(int argc, char *argv[])
 	{
 		ft_read_map(&map, argv[1]);
 		ft_save_map(&map, argv[1]);
-		ft_draw_map(&map);
-		map.wind = mlx_init(map.width * 40, map.height * 40, "42so_long", true);
+		map.wind = mlx_init(map.width * 50, map.height * 50, "42so_long", true);
 		ft_printf("Game started...\n");
 		ft_load_img(&map);
+		ft_draw_map(&map);
 		ft_printf("Img saved OK...\n");
 		mlx_loop(map.wind);
 		mlx_terminate(map.wind);
