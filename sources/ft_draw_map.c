@@ -6,7 +6,7 @@
 /*   By: anareval <anareval@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/25 20:30:53 by anareval          #+#    #+#             */
-/*   Updated: 2025/03/03 17:22:00 by anareval         ###   ########.fr       */
+/*   Updated: 2025/03/03 20:56:39 by anareval         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,11 @@ static void	ft_put_exit(t_map *map, int i, int j)
 	mlx_image_to_window(map->wind, map->img->exit, j * 50, i * 50);
 }
 
+void	ft_rdraw_map(void* param)
+{
+	ft_draw_map(param);
+}
+
 void	ft_draw_map(t_map *map)
 {
 	int	i;
@@ -43,9 +48,7 @@ void	ft_draw_map(t_map *map)
 				mlx_image_to_window(map->wind, map->img->wall, j * 50, i * 50);
 			else
 				mlx_image_to_window(map->wind, map->img->empty, j * 50, i * 50);
-			if (map->map[i][j] == 'P')
-				ft_put_player(map, i, j);
-			else if (map->map[i][j] == 'C')
+			if (map->map[i][j] == 'C')
 				ft_put_collect(map, i, j);
 			else if (map->map[i][j] == 'E')
 				ft_put_exit(map, i, j);
@@ -53,4 +56,5 @@ void	ft_draw_map(t_map *map)
 		}
 		i++;
 	}
+	ft_put_player(map, map->y, map->x);
 }

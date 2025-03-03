@@ -6,7 +6,7 @@
 #    By: anareval <anareval@student.42malaga.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/12/12 13:32:02 by anareval          #+#    #+#              #
-#    Updated: 2025/03/03 16:58:20 by anareval         ###   ########.fr        #
+#    Updated: 2025/03/03 19:56:11 by anareval         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -27,7 +27,8 @@ SRCS =		./sources/so_long.c \
 			./sources/ft_check_map.c \
 			./sources/ft_draw_map.c \
 			./sources/ft_load_img.c \
-			./sources/ft_free.c
+			./sources/ft_free.c \
+			./sources/ft_move_key.c
 
 OBJS = $(SRCS:.c=.o)
 
@@ -39,14 +40,14 @@ st_msg:
 
 libmlx:
 	@if [ ! -f "$(LIBMLX)/build/libmlx42.a" ]; then \
-		cmake $(LIBMLX) -B $(LIBMLX)/build && make -C $(LIBMLX)/build -j4; \
+		cmake $(LIBMLX) -B $(LIBMLX)/build && make -s -C $(LIBMLX)/build -j4; \
 		echo "Make LIBMLX"; \
 	fi
 
 libft:
 	@if [ ! -f "$(LIBFT)/libft.a" ]; then \
-		make -C $(LIBFT); \
-		make clean -C $(LIBFT); \
+		make -s -C $(LIBFT); \
+		make clean -s -C $(LIBFT); \
 	fi
 
 
@@ -61,7 +62,7 @@ clean:
 	@$(RM) $(OBJS)
 	@$(RM) -rf $(LIBMLX)/build
 	@echo "✅ Done!"
-	@make fclean -C $(LIBFT)
+	@make fclean -s -C $(LIBFT)
 
 fclean: clean
 	@echo "🚮 Deleting $(NAME)..."

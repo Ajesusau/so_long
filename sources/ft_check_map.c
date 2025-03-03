@@ -6,7 +6,7 @@
 /*   By: anareval <anareval@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/25 16:55:41 by anareval          #+#    #+#             */
-/*   Updated: 2025/03/03 18:59:56 by anareval         ###   ########.fr       */
+/*   Updated: 2025/03/03 19:17:36 by anareval         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,9 +18,15 @@ static void	ft_fail_map(void)
 	exit(EXIT_FAILURE);
 }
 
+static void	ft_set_player_xy(t_map *map, int i, int j)
+{
+	map->y = i;
+	map->x = j;
+}
+
 static void	ft_check_extra_objcs(char c)
 {
-	if ((c != '1') && (c != '0') && (c != 'P') && (c != 'E') && (c != 'C'))	
+	if ((c != '1') && (c != '0') && (c != 'P') && (c != 'E') && (c != 'C'))
 		ft_fail_map();
 }
 
@@ -37,7 +43,10 @@ void	ft_check_objcs(t_map *map)
 		{
 			ft_check_extra_objcs(map->map[i][j]);
 			if (map->map[i][j] == 'P')
+			{
 				map->player++;
+				ft_set_player_xy(map, i, j);
+			}
 			else if (map->map[i][j] == 'C')
 				map->collect++;
 			else if (map->map[i][j] == 'E')
@@ -47,7 +56,5 @@ void	ft_check_objcs(t_map *map)
 		i++;
 	}
 	if ((map->player != 1) || (map->collect < 1) || (map->finish != 1))
-	{	
 		ft_fail_map();
-	}
 }

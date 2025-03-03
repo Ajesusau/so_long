@@ -6,7 +6,7 @@
 /*   By: anareval <anareval@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/24 12:22:19 by anareval          #+#    #+#             */
-/*   Updated: 2025/03/03 17:11:49 by anareval         ###   ########.fr       */
+/*   Updated: 2025/03/03 20:52:45 by anareval         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,8 @@ int	main(int argc, char *argv[])
 		ft_check_objcs(&map);
 		ft_draw_map(&map);
 		ft_printf("Img saved OK.\n");
+		mlx_key_hook(map.wind, &ft_move_key, &map);
+		mlx_loop_hook(map.wind, ft_rdraw_map, &map);
 		mlx_loop(map.wind);
 		ft_printf("Loop OK.\n");
 		mlx_terminate(map.wind);
