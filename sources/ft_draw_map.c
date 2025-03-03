@@ -6,7 +6,7 @@
 /*   By: anareval <anareval@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/25 20:30:53 by anareval          #+#    #+#             */
-/*   Updated: 2025/02/28 10:15:22 by anareval         ###   ########.fr       */
+/*   Updated: 2025/03/03 12:46:45 by anareval         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,6 @@ void	ft_draw_map(t_map *map)
 				mlx_image_to_window(map->wind, map->img->exit, j * 50, i * 50);
 			j++;
 		}
-		ft_printf("\n");
 		i++;
 	}
 }

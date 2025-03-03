@@ -6,7 +6,7 @@
 /*   By: anareval <anareval@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/24 18:31:21 by anareval          #+#    #+#             */
-/*   Updated: 2025/02/28 09:29:40 by anareval         ###   ########.fr       */
+/*   Updated: 2025/03/03 12:49:12 by anareval         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,6 +53,11 @@ typedef struct s_map
 	int		height;
 	int		width;
 	char	**map;
+	int		x;
+	int		y;
+	int		player;
+	int		collect;
+	int		finish;
 	t_img	*img;
 	t_text	*text;
 	mlx_t	*wind;
