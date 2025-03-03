@@ -6,13 +6,13 @@
 /*   By: anareval <anareval@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/26 21:57:37 by anareval          #+#    #+#             */
-/*   Updated: 2025/02/28 09:36:47 by anareval         ###   ########.fr       */
+/*   Updated: 2025/03/03 15:23:09 by anareval         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
 
-static void	ft_load_xmp42(t_text *text)
+static void	ft_load_png(t_text *text)
 {
 	text->collect = mlx_load_png(COLLECT);
 	if (text->collect == NULL)
@@ -37,8 +37,8 @@ static void	ft_load_xmp42(t_text *text)
 void	ft_load_img(t_map *map)
 {
 	map->text = malloc(sizeof(t_text));
-	ft_load_xmp42(map->text);
-	ft_printf("Guardamos xpm en lista\n");
+	ft_load_png(map->text);
+	ft_printf("Png saved in list.\n");
 	map->img = malloc(sizeof(t_img));
 	map->img->collect = mlx_texture_to_image
 		(map->wind, map->text->collect);
@@ -52,5 +52,5 @@ void	ft_load_img(t_map *map)
 		(map->wind, map->text->wall);
 	map->img->win = mlx_texture_to_image
 		(map->wind, map->text->win);
-	ft_printf("Guardamos imagenes en lista\n");
+	ft_printf("Img saved in list.\n");
 }

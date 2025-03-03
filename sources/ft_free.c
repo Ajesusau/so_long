@@ -6,7 +6,7 @@
 /*   By: anareval <anareval@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/26 22:16:33 by anareval          #+#    #+#             */
-/*   Updated: 2025/03/03 15:08:41 by anareval         ###   ########.fr       */
+/*   Updated: 2025/03/03 16:38:11 by anareval         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,5 +55,4 @@ void	ft_free(t_map *map)
 	ft_printf("Free text OK.\n");
 	ft_free_img(map);
 	ft_printf("Free img OK.\n");
-	
 }

@@ -6,11 +6,26 @@
 /*   By: anareval <anareval@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/25 20:30:53 by anareval          #+#    #+#             */
-/*   Updated: 2025/03/03 12:46:45 by anareval         ###   ########.fr       */
+/*   Updated: 2025/03/03 17:22:00 by anareval         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
+
+static void	ft_put_player(t_map *map, int i, int j)
+{
+	mlx_image_to_window(map->wind, map->img->player, j * 50, i * 50);
+}
+
+static void	ft_put_collect(t_map *map, int i, int j)
+{
+	mlx_image_to_window(map->wind, map->img->collect, j * 50, i * 50);
+}
+
+static void	ft_put_exit(t_map *map, int i, int j)
+{
+	mlx_image_to_window(map->wind, map->img->exit, j * 50, i * 50);
+}
 
 void	ft_draw_map(t_map *map)
 {
@@ -29,11 +44,11 @@ void	ft_draw_map(t_map *map)
 			else
 				mlx_image_to_window(map->wind, map->img->empty, j * 50, i * 50);
 			if (map->map[i][j] == 'P')
-				mlx_image_to_window(map->wind, map->img->player, j * 50, i * 50);
+				ft_put_player(map, i, j);
 			else if (map->map[i][j] == 'C')
-				mlx_image_to_window(map->wind, map->img->collect, j * 50, i * 50);
+				ft_put_collect(map, i, j);
 			else if (map->map[i][j] == 'E')
-				mlx_image_to_window(map->wind, map->img->exit, j * 50, i * 50);
+				ft_put_exit(map, i, j);
 			j++;
 		}
 		i++;
