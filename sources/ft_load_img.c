@@ -6,7 +6,7 @@
 /*   By: anareval <anareval@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/26 21:57:37 by anareval          #+#    #+#             */
-/*   Updated: 2025/03/04 15:57:21 by anareval         ###   ########.fr       */
+/*   Updated: 2025/03/04 19:30:05 by anareval         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,6 +54,8 @@ void	ft_reload_img(t_map *map)
 		mlx_delete_image(map->wind, map->img->collect);
 	if (map->img->exit)
 		mlx_delete_image(map->wind, map->img->exit);
+	if (map->img->win)
+		mlx_delete_image(map->wind, map->img->win);
 	map->img->collect = mlx_texture_to_image
 		(map->wind, map->text->collect);
 	map->img->empty = mlx_texture_to_image
