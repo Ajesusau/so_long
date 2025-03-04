@@ -6,7 +6,7 @@
 /*   By: anareval <anareval@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/24 12:22:19 by anareval          #+#    #+#             */
-/*   Updated: 2025/03/04 15:59:46 by anareval         ###   ########.fr       */
+/*   Updated: 2025/03/04 16:52:13 by anareval         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,11 +33,13 @@ void	ft_exit(t_map *map)
 void	ft_win(t_map *map)
 {
 	mlx_close_window(map->wind);
-	ft_printf("W     W  III  N   N\n");
-	ft_printf("W  W  W   I   NN  N\n");
-	ft_printf("W  W  W   I   N N N\n");
-	ft_printf("W  W  W   I   N  NN\n");
-	ft_printf(" WW WW   III  N   N\n");
+	ft_printf("*************************************************\n");
+	ft_printf("**  Y   Y  OOO  U   U     W     W  III  N   N  **\n");
+	ft_printf("**   Y Y  O   O U   U     W  W  W   I   NN  N  **\n");
+	ft_printf("**    Y   O   O U   U     W  W  W   I   N N N  **\n");
+	ft_printf("**    Y   O   O U   U     W  W  W   I   N  NN  **\n");
+	ft_printf("**    Y    OOO   UUU       WW WW   III  N   N  **\n");
+	ft_printf("*************************************************\n");
 }
 
 int	main(int argc, char *argv[])
