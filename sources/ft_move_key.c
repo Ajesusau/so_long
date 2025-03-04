@@ -6,7 +6,7 @@
 /*   By: anareval <anareval@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/03 19:16:50 by anareval          #+#    #+#             */
-/*   Updated: 2025/03/04 15:45:15 by anareval         ###   ########.fr       */
+/*   Updated: 2025/03/04 18:25:38 by anareval         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@ static void	ft_key_w(t_map *map)
 	if (map->map[map->y - 1][map->x] != '1')
 	{
 		map->y--;
+		map->moves++;
+		ft_printf("Total Moves: %d\n", map->moves);
 		if (map->map[map->y][map->x] == 'C')
 		{
 			map->collect--;
@@ -32,6 +34,8 @@ static void	ft_key_a(t_map *map)
 	if (map->map[map->y][map->x - 1] != '1')
 	{
 		map->x--;
+		map->moves++;
+		ft_printf("Total Moves: %d\n", map->moves);
 		if (map->map[map->y][map->x] == 'C')
 		{
 			map->collect--;
@@ -47,6 +51,8 @@ static void	ft_key_s(t_map *map)
 	if (map->map[map->y + 1][map->x] != '1')
 	{
 		map->y++;
+		map->moves++;
+		ft_printf("Total Moves: %d\n", map->moves);
 		if (map->map[map->y][map->x] == 'C')
 		{
 			map->collect--;
@@ -62,6 +68,8 @@ static void	ft_key_d(t_map *map)
 	if (map->map[map->y][map->x + 1] != '1')
 	{
 		map->x++;
+		map->moves++;
+		ft_printf("Total Moves: %d\n", map->moves);
 		if (map->map[map->y][map->x] == 'C')
 		{
 			map->collect--;

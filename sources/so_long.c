@@ -6,7 +6,7 @@
 /*   By: anareval <anareval@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/24 12:22:19 by anareval          #+#    #+#             */
-/*   Updated: 2025/03/04 17:52:35 by anareval         ###   ########.fr       */
+/*   Updated: 2025/03/04 19:05:22 by anareval         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@ static void	ft_ini_dat(t_map *map, char *argv[])
 	map->player = 0;
 	map->collect = 0;
 	map->finish = 0;
+	map->moves = 0;
 	ft_save_map(map, argv[1]);
 	ft_printf("Map Read.\n");
 	ft_load_img(map);
@@ -27,7 +28,7 @@ static void	ft_ini_dat(t_map *map, char *argv[])
 void	ft_exit(t_map *map)
 {
 	mlx_close_window(map->wind);
-	ft_printf("Terminate OK.\n");
+	ft_printf("Exiting...\n");
 }
 
 void	ft_win(t_map *map)
@@ -59,7 +60,7 @@ int	main(int argc, char *argv[])
 		mlx_key_hook(map.wind, &ft_move_key, &map);
 		mlx_loop(map.wind);
 		mlx_terminate(map.wind);
-		ft_printf("Terminate OK.\n");
+		ft_printf("Game finished!\n");
 		ft_free(&map);
 		ft_printf("Free OK.\n");
 		return (EXIT_SUCCESS);
