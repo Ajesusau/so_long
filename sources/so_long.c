@@ -6,7 +6,7 @@
 /*   By: anareval <anareval@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/24 12:22:19 by anareval          #+#    #+#             */
-/*   Updated: 2025/03/03 20:52:45 by anareval         ###   ########.fr       */
+/*   Updated: 2025/03/04 12:16:11 by anareval         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,27 @@ static void	ft_ini_dat(t_map *map, char *argv[])
 	ft_save_map(map, argv[1]);
 	ft_printf("Map Read.\n");
 	ft_load_img(map);
+}
+
+void	ft_exit(t_map *map)
+{
+	mlx_terminate(map->wind);
+	ft_printf("Terminate OK.\n");
+	ft_free(map);
+	ft_printf("Free OK.\n");
+}
+
+void	ft_win(t_map *map)
+{
+	mlx_terminate(map->wind);
+	ft_printf("Terminate OK.\n");
+	ft_free(map);
+	ft_printf("Free OK.\n");
+	ft_printf("W     W  III  N   N\n");
+	ft_printf("W  W  W   I   NN  N\n");
+	ft_printf("W  W  W   I   N N N\n");
+	ft_printf("W  W  W   I   N  NN\n");
+	ft_printf(" WW WW   III  N   N\n");
 }
 
 int	main(int argc, char *argv[])
