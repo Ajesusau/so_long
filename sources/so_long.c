@@ -6,7 +6,7 @@
 /*   By: anareval <anareval@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/24 12:22:19 by anareval          #+#    #+#             */
-/*   Updated: 2025/03/04 16:52:13 by anareval         ###   ########.fr       */
+/*   Updated: 2025/03/04 17:52:35 by anareval         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,6 +48,7 @@ int	main(int argc, char *argv[])
 
 	if (argc == 2)
 	{
+		ft_check_map_ext(argv[1]);
 		ft_read_map(&map, argv[1]);
 		map.wind = mlx_init(map.width * 50, map.height * 50, "42so_long", true);
 		ft_ini_dat(&map, argv);
@@ -57,7 +58,6 @@ int	main(int argc, char *argv[])
 		ft_printf("Img saved OK.\n");
 		mlx_key_hook(map.wind, &ft_move_key, &map);
 		mlx_loop(map.wind);
-		ft_printf("Loop OK.\n");
 		mlx_terminate(map.wind);
 		ft_printf("Terminate OK.\n");
 		ft_free(&map);

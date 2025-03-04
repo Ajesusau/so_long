@@ -6,7 +6,7 @@
 /*   By: anareval <anareval@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/25 16:55:41 by anareval          #+#    #+#             */
-/*   Updated: 2025/03/04 13:47:09 by anareval         ###   ########.fr       */
+/*   Updated: 2025/03/04 18:13:48 by anareval         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,4 +57,16 @@ void	ft_check_objcs(t_map *map)
 	}
 	if ((map->player != 1) || (map->collect < 1) || (map->finish != 1))
 		ft_fail_map();
+}
+
+void	ft_check_map_ext(char *file)
+{
+	char	*ext;
+
+	ext = ft_strrchr(file, '.');
+	if (!ext || ft_strncmp(ext, ".ber", 5) != 0)
+	{
+		ft_printf("Error\nNot valid file.\n");
+		exit(EXIT_FAILURE);
+	}
 }
