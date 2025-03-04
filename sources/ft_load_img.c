@@ -6,7 +6,7 @@
 /*   By: anareval <anareval@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/26 21:57:37 by anareval          #+#    #+#             */
-/*   Updated: 2025/03/04 13:27:59 by anareval         ###   ########.fr       */
+/*   Updated: 2025/03/04 15:57:21 by anareval         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,5 +40,30 @@ void	ft_load_img(t_map *map)
 		(map->wind, map->text->wall);
 	map->img->win = mlx_texture_to_image
 		(map->wind, map->text->win);
-	ft_printf("Img saved in list.\n");
+}
+
+void	ft_reload_img(t_map *map)
+{
+	if (map->img->wall)
+		mlx_delete_image(map->wind, map->img->wall);
+	if (map->img->empty)
+		mlx_delete_image(map->wind, map->img->empty);
+	if (map->img->player)
+		mlx_delete_image(map->wind, map->img->player);
+	if (map->img->collect)
+		mlx_delete_image(map->wind, map->img->collect);
+	if (map->img->exit)
+		mlx_delete_image(map->wind, map->img->exit);
+	map->img->collect = mlx_texture_to_image
+		(map->wind, map->text->collect);
+	map->img->empty = mlx_texture_to_image
+		(map->wind, map->text->empty);
+	map->img->exit = mlx_texture_to_image
+		(map->wind, map->text->exit);
+	map->img->player = mlx_texture_to_image
+		(map->wind, map->text->player);
+	map->img->wall = mlx_texture_to_image
+		(map->wind, map->text->wall);
+	map->img->win = mlx_texture_to_image
+		(map->wind, map->text->win);
 }

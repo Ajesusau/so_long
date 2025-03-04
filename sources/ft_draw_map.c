@@ -6,7 +6,7 @@
 /*   By: anareval <anareval@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/25 20:30:53 by anareval          #+#    #+#             */
-/*   Updated: 2025/03/04 14:17:35 by anareval         ###   ########.fr       */
+/*   Updated: 2025/03/04 15:58:01 by anareval         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,7 @@ static void	ft_put_exit(t_map *map, int i, int j)
 
 void	ft_rdraw_map(t_map *map)
 {
+	ft_reload_img(map);
 	ft_draw_map(map);
 }
 

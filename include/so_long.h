@@ -6,7 +6,7 @@
 /*   By: anareval <anareval@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/24 18:31:21 by anareval          #+#    #+#             */
-/*   Updated: 2025/03/04 14:18:39 by anareval         ###   ########.fr       */
+/*   Updated: 2025/03/04 15:57:34 by anareval         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,9 +70,10 @@ void	ft_load_img(t_map *map);
 void	ft_fmalloc(void);
 void	ft_free(t_map *map);
 void	ft_check_objcs(t_map *map);
-void	ft_move_key(mlx_key_data_t keydata,t_map *map);
+void	ft_move_key(mlx_key_data_t keydata,void *param);
 void	ft_rdraw_map(t_map *map);
 void	ft_exit(t_map *map);
 void	ft_win(t_map *map);
+void	ft_reload_img(t_map *map);
 
 #endif

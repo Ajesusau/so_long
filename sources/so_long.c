@@ -6,7 +6,7 @@
 /*   By: anareval <anareval@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/24 12:22:19 by anareval          #+#    #+#             */
-/*   Updated: 2025/03/04 13:46:53 by anareval         ###   ########.fr       */
+/*   Updated: 2025/03/04 15:59:46 by anareval         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,6 @@ void	ft_exit(t_map *map)
 void	ft_win(t_map *map)
 {
 	mlx_close_window(map->wind);
-	ft_printf("Terminate OK.\n");
 	ft_printf("W     W  III  N   N\n");
 	ft_printf("W  W  W   I   NN  N\n");
 	ft_printf("W  W  W   I   N N N\n");
@@ -55,7 +54,6 @@ int	main(int argc, char *argv[])
 		ft_draw_map(&map);
 		ft_printf("Img saved OK.\n");
 		mlx_key_hook(map.wind, &ft_move_key, &map);
-		mlx_loop_hook(map.wind, ft_rdraw_map, &map);
 		mlx_loop(map.wind);
 		ft_printf("Loop OK.\n");
 		mlx_terminate(map.wind);

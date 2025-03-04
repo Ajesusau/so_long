@@ -6,7 +6,7 @@
 /*   By: anareval <anareval@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/03 19:16:50 by anareval          #+#    #+#             */
-/*   Updated: 2025/03/04 14:18:24 by anareval         ###   ########.fr       */
+/*   Updated: 2025/03/04 15:45:15 by anareval         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,16 +72,17 @@ static void	ft_key_d(t_map *map)
 	}
 }
 
-void	ft_move_key(mlx_key_data_t keydata,t_map *map)
+void	ft_move_key(mlx_key_data_t keydata, void *param)
 {
 	if (keydata.key == MLX_KEY_W && keydata.action == MLX_PRESS)
-		ft_key_w(map);
+		ft_key_w(param);
 	if (keydata.key == MLX_KEY_A && keydata.action == MLX_PRESS)
-		ft_key_a(map);
+		ft_key_a(param);
 	if (keydata.key == MLX_KEY_S && keydata.action == MLX_PRESS)
-		ft_key_s(map);
+		ft_key_s(param);
 	if (keydata.key == MLX_KEY_D && keydata.action == MLX_PRESS)
-		ft_key_d(map);
+		ft_key_d(param);
 	if (keydata.key == MLX_KEY_ESCAPE && keydata.action == MLX_PRESS)
-		ft_exit(map);
+		ft_exit(param);
+	ft_rdraw_map(param);
 }
