@@ -6,7 +6,7 @@
 /*   By: anareval <anareval@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/24 12:22:19 by anareval          #+#    #+#             */
-/*   Updated: 2025/03/04 12:16:11 by anareval         ###   ########.fr       */
+/*   Updated: 2025/03/04 13:46:53 by anareval         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,18 +26,14 @@ static void	ft_ini_dat(t_map *map, char *argv[])
 
 void	ft_exit(t_map *map)
 {
-	mlx_terminate(map->wind);
+	mlx_close_window(map->wind);
 	ft_printf("Terminate OK.\n");
-	ft_free(map);
-	ft_printf("Free OK.\n");
 }
 
 void	ft_win(t_map *map)
 {
-	mlx_terminate(map->wind);
+	mlx_close_window(map->wind);
 	ft_printf("Terminate OK.\n");
-	ft_free(map);
-	ft_printf("Free OK.\n");
 	ft_printf("W     W  III  N   N\n");
 	ft_printf("W  W  W   I   NN  N\n");
 	ft_printf("W  W  W   I   N N N\n");
@@ -70,7 +66,7 @@ int	main(int argc, char *argv[])
 	}
 	else
 	{
-		ft_printf("Invalid number of arguments.\n");
+		ft_printf("Error\nInvalid number of arguments.\n");
 		return (EXIT_FAILURE);
 	}
 }

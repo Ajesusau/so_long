@@ -6,7 +6,7 @@
 /*   By: anareval <anareval@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/26 21:57:37 by anareval          #+#    #+#             */
-/*   Updated: 2025/03/04 12:11:10 by anareval         ###   ########.fr       */
+/*   Updated: 2025/03/04 13:27:59 by anareval         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,23 +15,11 @@
 static void	ft_load_png(t_text *text)
 {
 	text->collect = mlx_load_png(COLLECT);
-	if (text->collect == NULL)
-		ft_printf("Error al cargar la imagen: %s\n", COLLECT);
 	text->empty = mlx_load_png(EMPTY);
-	if (text->empty == NULL)
-		ft_printf("Error al cargar la imagen: %s\n", EMPTY);
 	text->exit = mlx_load_png(EXIT);
-	if (text->exit == NULL)
-		ft_printf("Error al cargar la imagen: %s\n", EXIT);
 	text->player = mlx_load_png(PLAYER);
-	if (text->player == NULL)
-		ft_printf("Error al cargar la imagen: %s\n", PLAYER);
 	text->wall = mlx_load_png(WALL);
-	if (text->wall == NULL)
-		ft_printf("Error al cargar la imagen: %s\n", WALL);
 	text->win = mlx_load_png(WIN);
-	if (text->win == NULL)
-		ft_printf("Error al cargar la imagen: %s\n", WIN);
 }
 
 void	ft_load_img(t_map *map)

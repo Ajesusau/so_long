@@ -6,7 +6,7 @@
 /*   By: anareval <anareval@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/25 18:34:43 by anareval          #+#    #+#             */
-/*   Updated: 2025/02/27 11:58:48 by anareval         ###   ########.fr       */
+/*   Updated: 2025/03/04 13:48:22 by anareval         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ void	ft_read_map(t_map *map, char *file)
 	fd = open(file, O_RDONLY);
 	if (fd == -1)
 	{
-		perror("Unable to open the file");
+		perror("Error\nUnable to open the file");
 		exit (EXIT_FAILURE);
 	}
 	line = get_next_line(fd);
@@ -30,7 +30,7 @@ void	ft_read_map(t_map *map, char *file)
 	{
 		if ((int)ft_strlen(line) - 1 != map->width)
 		{
-			ft_printf("Error: not valid map.");
+			ft_printf("Error\nNot valid map.");
 			exit(EXIT_FAILURE);
 		}
 		map->height++;
@@ -43,7 +43,7 @@ void	ft_read_map(t_map *map, char *file)
 
 void	ft_fmalloc(void)
 {
-	ft_printf("Error: Could not create the map.");
+	ft_printf("Error\nCould not create the map.");
 	exit(EXIT_FAILURE);
 }
 

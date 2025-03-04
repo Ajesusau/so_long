@@ -6,7 +6,7 @@
 /*   By: anareval <anareval@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/25 16:55:41 by anareval          #+#    #+#             */
-/*   Updated: 2025/03/03 19:17:36 by anareval         ###   ########.fr       */
+/*   Updated: 2025/03/04 13:47:09 by anareval         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 static void	ft_fail_map(void)
 {
-	ft_printf("Error: not valid map.");
+	ft_printf("Error\nNot valid map.");
 	exit(EXIT_FAILURE);
 }
 

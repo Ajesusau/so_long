@@ -6,7 +6,7 @@
 #    By: anareval <anareval@student.42malaga.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/12/12 13:32:02 by anareval          #+#    #+#              #
-#    Updated: 2025/03/03 19:56:11 by anareval         ###   ########.fr        #
+#    Updated: 2025/03/04 13:41:07 by anareval         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,6 +15,8 @@ NAME=so_long
 CC = cc
 CFLAGS = -Wall -Werror -Wextra -Wunreachable-code -Ofast
 RM = rm -f
+SANITAZE = -fsanitize=address
+
 
 LIBMLX = 	./libs/MLX42
 LIBFT =		./libs/Libft
@@ -55,7 +57,7 @@ libft:
 	@$(CC) $(CFLAGS) $(HEADERS) -o $@ -c $<
 
 $(NAME): $(OBJS)
-	@$(CC) $(OBJS) $(LIBS) -o $(NAME)
+	@$(CC) $(OBJS) $(LIBS) $(SANITAZE) -o $(NAME)
 
 clean:
 	@echo "🗑️ Deleting .o files..."
