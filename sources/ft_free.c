@@ -6,7 +6,7 @@
 /*   By: anareval <anareval@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/26 22:16:33 by anareval          #+#    #+#             */
-/*   Updated: 2025/03/04 14:10:24 by anareval         ###   ########.fr       */
+/*   Updated: 2025/03/07 11:48:33 by anareval         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,6 +44,20 @@ static void	ft_free_map(t_map *map)
 		free(map->map[i]);
 		i++;
 	}
+	free(map->map);
+}
+
+void	ft_free_checker(t_mcheck *mcheck, t_map *map)
+{
+	int	i;
+
+	i = 0;
+	while (i < map->height)
+	{
+		free(mcheck->map[i]);
+		i++;
+	}
+	free(mcheck->map);
 }
 
 void	ft_free(t_map *map)

@@ -6,11 +6,17 @@
 /*   By: anareval <anareval@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/25 18:34:43 by anareval          #+#    #+#             */
-/*   Updated: 2025/03/04 13:48:22 by anareval         ###   ########.fr       */
+/*   Updated: 2025/03/07 11:35:49 by anareval         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
+
+static void	ft_fmalloc(void)
+{
+	ft_printf("Error\nCould not create the map.");
+	exit(EXIT_FAILURE);
+}
 
 void	ft_read_map(t_map *map, char *file)
 {
@@ -39,12 +45,6 @@ void	ft_read_map(t_map *map, char *file)
 	}
 	line = NULL;
 	close(fd);
-}
-
-void	ft_fmalloc(void)
-{
-	ft_printf("Error\nCould not create the map.");
-	exit(EXIT_FAILURE);
 }
 
 void	ft_save_map(t_map *map, char *file)
