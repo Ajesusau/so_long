@@ -6,7 +6,7 @@
 /*   By: anareval <anareval@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/06 19:29:19 by anareval          #+#    #+#             */
-/*   Updated: 2025/03/06 20:49:27 by anareval         ###   ########.fr       */
+/*   Updated: 2025/03/06 21:34:22 by anareval         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,8 +53,6 @@ static void	ft_charger_checker(t_mcheck *mcheck, t_map *map)
 	}
 	mcheck->collect = map->collect;
 	mcheck->finish = map->finish;
-	mcheck->x = map->x;
-	mcheck->y = map->y;
 }
 
 static void	ft_free_checker(t_mcheck *mcheck, t_map *map)
@@ -70,14 +68,33 @@ static void	ft_free_checker(t_mcheck *mcheck, t_map *map)
 	free(mcheck->map);
 }
 
-/*static void	ft_flood_fill(t_mcheck *mcheck)
+static void	ft_flood_fill(t_mcheck *mcheck, int y, int x)
 {
-}*/
+	if (mcheck->map[y][x] == 'C')
+		mcheck->collect--;
+	if (mcheck->map[y][x] == 'E')
+		mcheck->finish--;
+	if (mcheck->map[y][x] != '1' && mcheck->map[y][x] != 'X')
+	{
+		mcheck->map[y][x] = 'X';
+		ft_flood_fill(mcheck, y - 1, x);
+		ft_flood_fill(mcheck, y + 1, x);
+		ft_flood_fill(mcheck, y, x - 1);
+		ft_flood_fill(mcheck, y, x + 1);
+	}
+}
 
 void	ft_check_game(t_map *map)
 {
 	t_mcheck	mcheck;
 
 	ft_charger_checker(&mcheck, map);
+	ft_flood_fill(&mcheck, map->y, map->x);
+	ft_print_map(&mcheck, map);
+	if (mcheck.collect > 0 && mcheck.finish > 0)
+	{
+		ft_printf("Error\nNot valid map.");
+		exit (EXIT_FAILURE);
+	}
 	ft_free_checker(&mcheck, map);
 }

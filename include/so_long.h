@@ -6,7 +6,7 @@
 /*   By: anareval <anareval@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/24 18:31:21 by anareval          #+#    #+#             */
-/*   Updated: 2025/03/06 20:25:57 by anareval         ###   ########.fr       */
+/*   Updated: 2025/03/06 21:00:51 by anareval         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,8 +69,6 @@ typedef struct s_mcheck
 	char	**map;
 	int		collect;
 	int		finish;
-	int		x;
-	int		y;
 }	t_mcheck;
 
 void	ft_read_map(t_map *map, char *file);
