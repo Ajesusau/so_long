@@ -6,7 +6,7 @@
 /*   By: anareval <anareval@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/24 18:31:21 by anareval          #+#    #+#             */
-/*   Updated: 2025/03/06 19:40:44 by anareval         ###   ########.fr       */
+/*   Updated: 2025/03/06 20:25:57 by anareval         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -87,5 +87,6 @@ void	ft_win(t_map *map);
 void	ft_reload_img(t_map *map);
 void	ft_check_map_ext(char *file);
 void	ft_check_map_limits(t_map *map);
+void	ft_check_game(t_map *map);
 
 #endif

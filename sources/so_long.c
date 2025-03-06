@@ -6,7 +6,7 @@
 /*   By: anareval <anareval@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/24 12:22:19 by anareval          #+#    #+#             */
-/*   Updated: 2025/03/06 19:49:42 by anareval         ###   ########.fr       */
+/*   Updated: 2025/03/06 20:26:07 by anareval         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,6 +47,7 @@ static void	ft_map_checkers(t_map *map)
 {
 	ft_check_objcs(map);
 	ft_check_map_limits(map);
+	ft_check_game(map);
 }
 
 int	main(int argc, char *argv[])
