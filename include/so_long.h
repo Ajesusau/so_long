@@ -6,7 +6,7 @@
 /*   By: anareval <anareval@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/24 18:31:21 by anareval          #+#    #+#             */
-/*   Updated: 2025/03/04 19:05:09 by anareval         ###   ########.fr       */
+/*   Updated: 2025/03/06 19:40:44 by anareval         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,6 +64,15 @@ typedef struct s_map
 	mlx_t	*wind;
 }	t_map;
 
+typedef struct s_mcheck
+{
+	char	**map;
+	int		collect;
+	int		finish;
+	int		x;
+	int		y;
+}	t_mcheck;
+
 void	ft_read_map(t_map *map, char *file);
 void	ft_save_map(t_map *map, char *file);
 void	ft_draw_map(t_map *map);
@@ -71,11 +80,12 @@ void	ft_load_img(t_map *map);
 void	ft_fmalloc(void);
 void	ft_free(t_map *map);
 void	ft_check_objcs(t_map *map);
-void	ft_move_key(mlx_key_data_t keydata,void *param);
+void	ft_move_key(mlx_key_data_t keydata, void *param);
 void	ft_rdraw_map(t_map *map);
 void	ft_exit(t_map *map);
 void	ft_win(t_map *map);
 void	ft_reload_img(t_map *map);
 void	ft_check_map_ext(char *file);
+void	ft_check_map_limits(t_map *map);
 
 #endif

@@ -6,7 +6,7 @@
 #    By: anareval <anareval@student.42malaga.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/12/12 13:32:02 by anareval          #+#    #+#              #
-#    Updated: 2025/03/04 13:41:07 by anareval         ###   ########.fr        #
+#    Updated: 2025/03/06 19:29:12 by anareval         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -30,7 +30,8 @@ SRCS =		./sources/so_long.c \
 			./sources/ft_draw_map.c \
 			./sources/ft_load_img.c \
 			./sources/ft_free.c \
-			./sources/ft_move_key.c
+			./sources/ft_move_key.c \
+			./sources/ft_check_game.c
 
 OBJS = $(SRCS:.c=.o)
 
