@@ -25,8 +25,18 @@ static void	ft_load_png(t_text *text)
 void	ft_load_img(t_map *map)
 {
 	map->text = malloc(sizeof(t_text));
+	if (!map->text)
+	{
+		printf("Error\nCould not save the textures\n");
+		exit (EXIT_FAILURE);
+	}
 	ft_load_png(map->text);
 	map->img = malloc(sizeof(t_img));
+	if (!map->img)
+	{
+		printf("Error\nCould not save the images\n");
+		exit (EXIT_FAILURE);
+	}
 	map->img->collect = mlx_texture_to_image
 		(map->wind, map->text->collect);
 	map->img->empty = mlx_texture_to_image

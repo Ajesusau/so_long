@@ -6,7 +6,7 @@
 /*   By: anareval <anareval@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/24 12:22:19 by anareval          #+#    #+#             */
-/*   Updated: 2025/03/06 20:26:07 by anareval         ###   ########.fr       */
+/*   Updated: 2025/03/06 23:07:39 by anareval         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,7 +58,7 @@ int	main(int argc, char *argv[])
 	{
 		ft_check_map_ext(argv[1]);
 		ft_read_map(&map, argv[1]);
-		map.wind = mlx_init(map.width * 50, map.height * 50, "42so_long", true);
+		map.wind = mlx_init(map.width * 50, map.height * 50, "42so_long", false);
 		ft_ini_dat(&map, argv);
 		ft_printf("Starting map checking.\n");
 		ft_map_checkers(&map);

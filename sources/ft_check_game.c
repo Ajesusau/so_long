@@ -6,7 +6,7 @@
 /*   By: anareval <anareval@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/06 19:29:19 by anareval          #+#    #+#             */
-/*   Updated: 2025/03/06 21:34:22 by anareval         ###   ########.fr       */
+/*   Updated: 2025/03/06 23:18:17 by anareval         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,10 +15,8 @@
 void	ft_check_map_limits(t_map *map)
 {
 	int	i;
-	int	err;
 
 	i = 0;
-	err = 0;
 	while (i < map->width)
 	{
 		if (map->map[0][i] != '1' || map->map[map->height - 1][i] != '1')
@@ -46,6 +44,11 @@ static void	ft_charger_checker(t_mcheck *mcheck, t_map *map)
 
 	i = 0;
 	mcheck->map = (char **)malloc((map->height + 1) * sizeof(char *));
+	if (!mcheck->map)
+	{
+		printf("Error\nCould not create the check map\n");
+		exit (EXIT_FAILURE);
+	}
 	while (i < map->height)
 	{
 		mcheck->map[i] = ft_strdup(map->map[i]);
@@ -90,7 +93,6 @@ void	ft_check_game(t_map *map)
 
 	ft_charger_checker(&mcheck, map);
 	ft_flood_fill(&mcheck, map->y, map->x);
-	ft_print_map(&mcheck, map);
 	if (mcheck.collect > 0 && mcheck.finish > 0)
 	{
 		ft_printf("Error\nNot valid map.");
