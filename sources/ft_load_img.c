@@ -6,20 +6,37 @@
 /*   By: anareval <anareval@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/26 21:57:37 by anareval          #+#    #+#             */
-/*   Updated: 2025/03/06 19:20:08 by anareval         ###   ########.fr       */
+/*   Updated: 2025/03/07 14:21:30 by anareval         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
 
+static void	ft_fail_text(void)
+{
+	printf("Error\nCould not save the textures\n");
+	exit (EXIT_FAILURE);
+}
 static void	ft_load_png(t_text *text)
 {
 	text->collect = mlx_load_png(COLLECT);
+	if (!text->collect)
+		ft_fail_text();
 	text->empty = mlx_load_png(EMPTY);
+	if (!text->empty)
+		ft_fail_text();
 	text->exit = mlx_load_png(EXIT);
+	if (!text->exit)
+		ft_fail_text();
 	text->player = mlx_load_png(PLAYER);
+	if (!text->player)
+		ft_fail_text();
 	text->wall = mlx_load_png(WALL);
+	if (!text->wall)
+		ft_fail_text();
 	text->win = mlx_load_png(WIN);
+	if (!text->win)
+		ft_fail_text();
 }
 
 void	ft_load_img(t_map *map)

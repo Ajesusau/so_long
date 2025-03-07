@@ -6,7 +6,7 @@
 /*   By: anareval <anareval@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/26 22:16:33 by anareval          #+#    #+#             */
-/*   Updated: 2025/03/07 11:48:33 by anareval         ###   ########.fr       */
+/*   Updated: 2025/03/07 14:21:57 by anareval         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,17 +21,6 @@ static void	ft_delete_text(t_map *map)
 	mlx_delete_texture(map->text->wall);
 	mlx_delete_texture(map->text->win);
 	free(map->text);
-}
-
-static void	ft_delete_img(t_map *map)
-{
-	mlx_delete_image(map->wind, map->img->collect);
-	mlx_delete_image(map->wind, map->img->empty);
-	mlx_delete_image(map->wind, map->img->exit);
-	mlx_delete_image(map->wind, map->img->player);
-	mlx_delete_image(map->wind, map->img->wall);
-	mlx_delete_image(map->wind, map->img->win);
-	free(map->img);
 }
 
 static void	ft_free_map(t_map *map)
@@ -66,6 +55,6 @@ void	ft_free(t_map *map)
 	ft_printf("Free map OK.\n");
 	ft_delete_text(map);
 	ft_printf("Free text OK.\n");
-	ft_delete_img(map);
+	free(map->img);
 	ft_printf("Free img OK.\n");
 }
