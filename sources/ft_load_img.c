@@ -6,7 +6,7 @@
 /*   By: anareval <anareval@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/26 21:57:37 by anareval          #+#    #+#             */
-/*   Updated: 2025/03/07 14:21:30 by anareval         ###   ########.fr       */
+/*   Updated: 2025/03/10 12:24:16 by anareval         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@ static void	ft_fail_text(void)
 	printf("Error\nCould not save the textures\n");
 	exit (EXIT_FAILURE);
 }
+
 static void	ft_load_png(t_text *text)
 {
 	text->collect = mlx_load_png(COLLECT);
