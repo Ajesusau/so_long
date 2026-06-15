@@ -60,7 +60,7 @@ Ejemplo:
 
  El programa carga `map1.ber`, valida el mapa y abre la ventana del juego.
 
-## ⌨️ Controles
+##  Controles
 
 - W / A / S / D → moverse  
 - ESC → salir del juego
